@@ -1,0 +1,163 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://addons/GameSettings/Scripts/Remapper.gd" type="Script" id=1]
+[ext_resource path="res://addons/GameSettings/Scripts/Control_List.gd" type="Script" id=2]
+
+[node name="Remapper" type="CanvasLayer"]
+
+[node name="Control_Text" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -26.5
+margin_top = 41.5311
+margin_right = 26.5
+margin_bottom = 55.5311
+text = "Controls"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Controls" type="ScrollContainer" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -114.0
+margin_top = 111.0
+margin_right = 120.0
+margin_bottom = -201.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Control_List" type="VBoxContainer" parent="Controls"]
+margin_right = 182.0
+margin_bottom = 92.0
+alignment = 1
+script = ExtResource( 2 )
+
+[node name="Up" type="HBoxContainer" parent="Controls/Control_List"]
+margin_right = 182.0
+margin_bottom = 20.0
+alignment = 1
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+action = "Up"
+
+[node name="ActionText" type="Label" parent="Controls/Control_List/Up"]
+margin_top = 3.0
+margin_right = 158.0
+margin_bottom = 17.0
+text = "Up                                   "
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Button" type="Button" parent="Controls/Control_List/Up"]
+margin_left = 162.0
+margin_right = 182.0
+margin_bottom = 20.0
+toggle_mode = true
+text = "K"
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Down" type="HBoxContainer" parent="Controls/Control_List"]
+margin_top = 24.0
+margin_right = 182.0
+margin_bottom = 44.0
+alignment = 1
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+action = "Down"
+
+[node name="ActionText" type="Label" parent="Controls/Control_List/Down"]
+margin_top = 3.0
+margin_right = 158.0
+margin_bottom = 17.0
+text = "Up                                   "
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Button" type="Button" parent="Controls/Control_List/Down"]
+margin_left = 162.0
+margin_right = 182.0
+margin_bottom = 20.0
+toggle_mode = true
+text = "K"
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Left" type="HBoxContainer" parent="Controls/Control_List"]
+margin_top = 48.0
+margin_right = 182.0
+margin_bottom = 68.0
+alignment = 1
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+action = "Left"
+
+[node name="ActionText" type="Label" parent="Controls/Control_List/Left"]
+margin_top = 3.0
+margin_right = 158.0
+margin_bottom = 17.0
+text = "Up                                   "
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Button" type="Button" parent="Controls/Control_List/Left"]
+margin_left = 162.0
+margin_right = 182.0
+margin_bottom = 20.0
+toggle_mode = true
+text = "K"
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Right" type="HBoxContainer" parent="Controls/Control_List"]
+margin_top = 72.0
+margin_right = 182.0
+margin_bottom = 92.0
+alignment = 1
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+action = "Right"
+
+[node name="ActionText" type="Label" parent="Controls/Control_List/Right"]
+margin_top = 3.0
+margin_right = 158.0
+margin_bottom = 17.0
+text = "Up                                   "
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Button" type="Button" parent="Controls/Control_List/Right"]
+margin_left = 162.0
+margin_right = 182.0
+margin_bottom = 20.0
+toggle_mode = true
+text = "K"
+__meta__ = {
+"_edit_lock_": true
+}
+[connection signal="newmapping" from="Controls/Control_List/Up" to="Controls/Control_List" method="_on_newmapping"]
+[connection signal="toggled" from="Controls/Control_List/Up/Button" to="Controls/Control_List/Up" method="_toggled"]
+[connection signal="newmapping" from="Controls/Control_List/Down" to="Controls/Control_List" method="_on_newmapping"]
+[connection signal="toggled" from="Controls/Control_List/Down/Button" to="Controls/Control_List/Down" method="_toggled"]
+[connection signal="newmapping" from="Controls/Control_List/Left" to="Controls/Control_List" method="_on_newmapping"]
+[connection signal="toggled" from="Controls/Control_List/Left/Button" to="Controls/Control_List/Left" method="_toggled"]
+[connection signal="newmapping" from="Controls/Control_List/Right" to="Controls/Control_List" method="_on_newmapping"]
+[connection signal="toggled" from="Controls/Control_List/Right/Button" to="Controls/Control_List/Right" method="_toggled"]
